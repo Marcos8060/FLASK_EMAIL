@@ -5,7 +5,7 @@
  <div class="container">
      <h1 class="text-center mt-4">Get your average height</h1>
 
-     <form action="" method="POST">
+     <form action="{{ url_for('success') }}" method="POST">
         <label for="emal" class="form-label">Email</label>
         <input type="email" class="form-control" name="email" placeholder="Enter email..." required>
         <label for="subject" class="form-label">Subject</label>

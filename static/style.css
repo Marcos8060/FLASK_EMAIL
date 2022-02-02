@@ -1,15 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:wght@200;300;400&display=swap');
 
-body{
-    background: #cccccc;
+
+*{
+    color: white;
     font-family: 'Alfa Slab One', cursive;
     font-family: 'Poppins', sans-serif;
 }
 .container > form{
-    width: 40%;
+    background: #474565;
+    padding: 30px;
+    border-radius: 20px;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 8vh;
+    color:white;
+}
+.container > form > input{
+    background: #25253F;
+    outline: 0;
+    border-color: #474565;
+    color: white;
+}
+.container > form > input:focus{
+    background:  #25253F;
+    color: white;
+}
+.container > form > textarea{
+    color: white;
+    background: #25253F;
+    outline: 0;
+    border-color: #474565;
+}
+.container > form > textarea:focus{
+    background: #25253F;
+    color: white;
 }
 .container > h1{
     font-family: 'Poppins', sans-serif;

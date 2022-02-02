@@ -2,8 +2,19 @@ from crypt import methods
 from enum import unique
 from flask import Flask,render_template,request
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail,Message
 
 app = Flask(__name__)
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'marcosgav80@gmail.com'
+app.config['MAIL_PASSWORD'] = 'gxgoeioxyktvhzab'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+
+mail = Mail(app)
+
 app.config['SQLALCHEMY_DATABASE_URI']='postgresql://marcos:getaways@localhost/email_messenger'
 
 db = SQLAlchemy(app)
@@ -33,9 +44,13 @@ def success():
         subject = request.form['subject']
         msg = request.form['message']
         print(email,subject,msg)
-        data = Data(email,subject,msg)
-        db.session.add(data)
-        db.session.commit()
+        if db.session.query(Data).filter(Data.email == email).count() == 0:
+            message = Message(subject,sender='marcosgav80@gmail.com',recipients=[email])
+            message.body = msg
+            mail.send(message)
+            data = Data(email,subject,msg)
+            db.session.add(data)
+            db.session.commit()
     message = 'Your message is sent successfully!'
     return render_template('success.html', message=message) 
 

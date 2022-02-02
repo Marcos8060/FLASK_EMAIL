@@ -3,8 +3,8 @@
 {% block content %}
 
  <div class="container">
-     <h1 class="text-center mt-4">Get your average height</h1>
-
+     <h2 class="text-center mt-4">Welcome to Flask Emails</h2>
+     <h4 class="alert-danger text-center">{{ text }}</h4>
      <form action="{{ url_for('success') }}" method="POST">
         <label for="emal" class="form-label">Email</label>
         <input type="email" class="form-control" name="email" placeholder="Enter email..." required>
@@ -12,7 +12,7 @@
         <input type="text" name="subject" class="form-control" placeholder="Enter subject..." required>
         <label for="message">Message</label>
         <textarea name="message" id="" class="form-control" cols="30" rows="5" placeholder="Enter message..." required></textarea>
-        <input type="submit" class="btn btn-primary mt-2">
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
      </form>
  </div>
 {% endblock %}

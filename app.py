@@ -51,7 +51,7 @@ def success():
             data = Data(email,subject,msg)
             db.session.add(data)
             db.session.commit()
-    message = 'Your message is sent successfully!'
+    message = 'Message sent. You will recieve an email shortly!'
     return render_template('success.html', message=message) 
 
 

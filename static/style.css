@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:wght@200;300;400&display=swap');
+
+body{
+    background: #cccccc;
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+.container > form{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8vh;
+}
+.container > h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}

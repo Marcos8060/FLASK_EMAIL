@@ -3,15 +3,16 @@
 {% block content %}
 
  <div class="container">
-     <h1>Get your average height</h1>
+     <h1 class="text-center mt-4">Get your average height</h1>
 
      <form action="" method="POST">
         <label for="emal" class="form-label">Email</label>
-        <input type="email" class="from-control" name="email" placeholder="Enter email...">
+        <input type="email" class="form-control" name="email" placeholder="Enter email..." required>
         <label for="subject" class="form-label">Subject</label>
-        <input type="text" name="subject" class="form-control" placeholder="Enter subject...">
-        <label for="message" class="form-label"></label>
-        <textarea name="message" id="" cols="30" rows="5" placeholder="Enter message..."></textarea>
+        <input type="text" name="subject" class="form-control" placeholder="Enter subject..." required>
+        <label for="message">Message</label>
+        <textarea name="message" id="" class="form-control" cols="30" rows="5" placeholder="Enter message..." required></textarea>
+        <input type="submit" class="btn btn-primary mt-2">
      </form>
  </div>
 {% endblock %}
